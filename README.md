@@ -17,9 +17,9 @@ Noice Compatibility: Uses standard vim.notify(), which is automatically integrat
 You can install this plugin using your favorite plugin manager.
 
 lazy.nvim
-```
+```lua
+return {
   'Sombrechip88244/macplayer.nvim',
-{
   lazy = false, -- Load on startup
   -- Example configuration:
   config = function()
@@ -27,7 +27,7 @@ lazy.nvim
       -- Set to false if you use a statusline indicator or noice.nvim
       -- and prefer no floating message on successful toggles.
       show_notifications = true, 
-    })
+    }),
   end,
 }
 ```
@@ -51,7 +51,7 @@ The plugin registers a global Neovim command:
 2. Key Mapping (Recommended)
 
 Map the command to a convenient key combination:
-```
+```lua
 -- Example mapping to <leader>m (e.g., Space + m) in Normal mode
 vim.keymap.set('n', '<leader>m', '<cmd>MacPlayerToggle<CR>', { desc = 'Toggle Media Playback' })
 ```
@@ -66,7 +66,7 @@ For full documentation and API details, run the help command inside Neovim:
 # ⚙️ Configuration (Defaults)
 
 The plugin provides a simple setup function for configuration:
-```
+```lua
 require('macplayer').setup({
   show_notifications = true, -- boolean (Default: true). Controls whether success/error messages appear.
 })
