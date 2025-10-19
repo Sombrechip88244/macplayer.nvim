@@ -18,7 +18,7 @@ You can install this plugin using your favorite plugin manager.
 
 lazy.nvim
 ```
-  'YourGitHubUsername/macplayer.nvim', -- Replace with your actual GitHub path
+  'Sombrechip88244/macplayer.nvim',
 {
   lazy = false, -- Load on startup
   -- Example configuration:
@@ -34,7 +34,7 @@ lazy.nvim
 
 ### packer.nvim
 ```
-use { 'YourGitHubUsername/macplayer.nvim', config = 'require("macplayer").setup()' }
+use { 'Sombrechip88244/macplayer.nvim', config = 'require("macplayer").setup()' }
 -- If using Packer with custom options:
 -- use { 'YourGitHubUsername/macplayer.nvim', config = function() require("macplayer").setup({ show_notifications = false }) end }
 ```
@@ -44,33 +44,33 @@ use { 'YourGitHubUsername/macplayer.nvim', config = 'require("macplayer").setup(
 1. User Command
 
 The plugin registers a global Neovim command:
-
+```
 :MacPlayerToggle
-
+```
 
 2. Key Mapping (Recommended)
 
 Map the command to a convenient key combination:
-
+```
 -- Example mapping to <leader>m (e.g., Space + m) in Normal mode
 vim.keymap.set('n', '<leader>m', '<cmd>MacPlayerToggle<CR>', { desc = 'Toggle Media Playback' })
-
+```
 
 3. Documentation
 
 For full documentation and API details, run the help command inside Neovim:
-
+```
 :help macplayer.nvim
-
+```
 
 # ⚙️ Configuration (Defaults)
 
 The plugin provides a simple setup function for configuration:
-
+```
 require('macplayer').setup({
   show_notifications = true, -- boolean (Default: true). Controls whether success/error messages appear.
 })
-
+```
 
 ⚠️ Notes
 
