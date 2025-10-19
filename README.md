@@ -17,7 +17,7 @@ Noice Compatibility: Uses standard vim.notify(), which is automatically integrat
 You can install this plugin using your favorite plugin manager.
 
 lazy.nvim
-
+```
   'YourGitHubUsername/macplayer.nvim', -- Replace with your actual GitHub path
 {
   lazy = false, -- Load on startup
@@ -30,14 +30,14 @@ lazy.nvim
     })
   end,
 }
+```
 
-
-packer.nvim
-
+### packer.nvim
+```
 use { 'YourGitHubUsername/macplayer.nvim', config = 'require("macplayer").setup()' }
 -- If using Packer with custom options:
 -- use { 'YourGitHubUsername/macplayer.nvim', config = function() require("macplayer").setup({ show_notifications = false }) end }
-
+```
 
 # 🛠️ Usage
 
