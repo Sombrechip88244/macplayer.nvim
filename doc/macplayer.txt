@@ -1,0 +1,90 @@
+macplayer.nvim Toggle media playback on macOS.
+
+==============================================================================
+INTRODUCTION                                                macplayer-intro
+
+macplayer.nvim is a simple, non-blocking Neovim plugin for macOS users to
+quickly toggle playback (Play/Pause) on multiple media applications without
+leaving the editor.
+
+Supported Applications:
+
+Spotify
+
+Apple Music (labeled as "Music" in AppleScript)
+
+Amazon Music
+
+The plugin executes an asynchronous AppleScript command via osascript.
+
+==============================================================================
+SETUP                                                       macplayer-setup
+
+The plugin is configured by calling the |macplayer.setup()| function.
+
+Example using |lazy.nvim|:
+
+lua
+{
+'YourGitHubUsername/macplayer.nvim', -- Replace with your actual GitHub path
+lazy = false,
+config = function()
+require('macplayer').setup({
+show_notifications = false,
+})
+end,
+}
+<
+
+==============================================================================
+CONFIGURATION OPTIONS                                       macplayer-config
+
+The default configuration is as follows:
+
+lua
+require('macplayer').setup({
+-- If true, displays a small notification message on success or failure.
+-- If using noice.nvim or a statusline component, you may want to set
+-- this to false for a less intrusive experience.
+show_notifications = true, -- boolean
+})
+<
+
+==============================================================================
+COMMANDS                                                    macplayer-commands
+
+The plugin registers a single user command:
+
+:MacPlayerToggle                                    :MacPlayerToggle
+Toggles the media playback state (Play/Pause) for supported macOS media
+players (Spotify, Music, Amazon Music). Executes asynchronously.
+
+==============================================================================
+KEY MAPPING                                                 macplayer-keymap
+
+It is highly recommended to map the command to a convenient key. Add this
+to your Neovim configuration:
+
+lua
+vim.keymap.set('n', '<leader>m', '<cmd>MacPlayerToggle<CR>', { desc = 'Toggle Media Playback' })
+<
+
+==============================================================================
+API                                                         macplayer-api
+
+The main functionality can be called directly from Lua:
+
+lua
+require('macplayer').toggle_playback()
+<
+
+==============================================================================
+ISSUES                                                      macplayer-issues
+
+If you encounter issues, please check the following:
+
+Ensure you are running Neovim on macOS. The plugin will warn you otherwise.
+
+Check if the targeted applications (Spotify, Music, Amazon Music) are running.
+
+vim:tw=78:ts=8:ft=help:norl:
